@@ -14,6 +14,7 @@ video-time__total
     const videoProgress = document.querySelector('.video-progress');
     const videoTimePassed = document.querySelector('.video-time__passed');
     const videoTimeTotal = document.querySelector('.video-time__total');
+    const videoVolume = document.querySelector('.video-volume');
 
     const toggleIcon = () => {
         if(videoPlayer.paused) {
@@ -74,5 +75,12 @@ video-time__total
         videoPlayer.currentTime = (value * duration) / 100;
     });
 
-}    
+    videoVolume.addEventListener('input', () => {
+        videoPlayer.volume = videoVolume.value / 100;
+    });
+
+    videoVolume.value = 50;
+
+
+};   
     
